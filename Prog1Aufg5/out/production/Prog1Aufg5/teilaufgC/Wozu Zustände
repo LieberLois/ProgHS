@@ -1,0 +1,9 @@
+Clear:
+    Bei keiner Eingabe => Prog resetten
+
+
+Wrong:
+    Gibt Fehler aus, falls Eingabe nicht erwartet andere Fehlermeldung
+
+
+Sinn der Zustände: UNERWARTETE Eingaben abfangen
