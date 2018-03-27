@@ -1,12 +1,11 @@
-@SuppressWarnings("Duplicates")
 public class Board {
 
     // i is y - j is x
-    public final int HEIGTH = 8;
-    public final int WIDTH = 8;
-    public char[][] board = new char[HEIGTH][WIDTH];
+    private final int HEIGTH = 8;
+    private final int WIDTH = 8;
+    private char[][] board = new char[HEIGTH][WIDTH];
 
-    public Board(){
+    Board(){
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board.length; j++){
                 board[i][j] = '.';
@@ -15,7 +14,7 @@ public class Board {
     }
 
 
-    public String printBoard(){
+    String printBoard(){
         String s = "12345678\n";
 
         for(int i = 0; i < board.length; i++){
@@ -30,7 +29,7 @@ public class Board {
         return s;
     }
 
-    public boolean placeSign(int x, char sign){
+    boolean placeSign(int x, char sign){
         for(int i = HEIGTH-1; i >= 0; i--){
             if(board[i][x] == '.'){
                 board[i][x] = sign;
@@ -42,7 +41,7 @@ public class Board {
         return false;
     }
 
-    public boolean checkWin(){
+    boolean checkWin(){
         if(checkHorizontal() || checkVertical() || checkDiagonal()){
             return true;
         } else {
@@ -50,7 +49,7 @@ public class Board {
         }
     }
 
-    public boolean checkHorizontal(){
+    boolean checkHorizontal(){
         int counter;
         char sign;
 
@@ -75,7 +74,7 @@ public class Board {
         return false;
     }
 
-    public boolean checkVertical(){
+    boolean checkVertical(){
 
         int counter;
         char sign;
@@ -100,7 +99,7 @@ public class Board {
         return false;
     }
 
-    public boolean checkDiagonal(){
+    boolean checkDiagonal(){
         boolean checking = false;
 
         for(int i = 0; i <= WIDTH-1; i++){
@@ -119,7 +118,7 @@ public class Board {
         return checking;
     }
 
-    public boolean checkDiagonalLeftToRight(int x, int y){
+    boolean checkDiagonalLeftToRight(int x, int y){
         int counter;
         char sign;
 
@@ -147,7 +146,7 @@ public class Board {
         return false;
     }
 
-    public boolean checkDiagonalRightToLeft(int x, int y){
+    boolean checkDiagonalRightToLeft(int x, int y){
         int counter;
         char sign;
 
