@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Controller {
@@ -27,7 +28,7 @@ public class Controller {
         return false;
     }
 
-    private static void play(){
+    private static void play() {
 
         int temp;
 
@@ -39,12 +40,24 @@ public class Controller {
 
             while (!(temp > 0 && temp < 9)) {
                 System.out.print("Player " + playerTurn + ": ");
-                temp = sc.nextInt();
+
+                try {
+                    temp = System.in.read() - '0';
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 if(!(temp > 0 && temp < 9)){
                     System.out.println();
                     System.out.println("Enter a number between 1 and 8!");
                     System.out.println();
                 }
+            }
+
+            try {
+                System.in.read();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
             System.out.println();
